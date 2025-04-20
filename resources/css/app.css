@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@source "../views";
+
+/* Neon text effect */
+.neon-text {
+  color: #ffcc00;
+  text-shadow: 0 0 5px #ffcc00, 0 0 10px #ff3300, 0 0 20px #ff3300;
+}
+
+.neon-button {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffff;
+}
+.neon-button:hover {
+  background-color: #00ffff33;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* Bubble animation */
+.bubble {
+  position: fixed; /* Ubah ke fixed agar tidak mendorong body */
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+  z-index: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Prevent all scrolls */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #1e1e2f, #000);
+  font-family: monospace;
+}
